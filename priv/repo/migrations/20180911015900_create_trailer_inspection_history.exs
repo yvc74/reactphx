@@ -6,7 +6,6 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Inspection.History do
           add :trailer_id, references(:trailers, on_delete: :delete_all), null: false
           add :inspection_type_id, references(:inspection_type, on_delete: :delete_all), null: false
           add :user_id, references(:users, on_delete: :delete_all), null: false
-          add :occured_at, :datetime, null: false
           add :preferred_vendor_location_id, references(:locations, on_delete: :delete_all)
           add :due_on, :date, null: false
           add :occured_at, :datetime
