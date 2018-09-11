@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.CreateGW.Comment.Type do
+defmodule GW.Repo.Migrations.CreateGW.Locations do
     use Ecto.Migration
   
     def change do
@@ -19,8 +19,9 @@ defmodule GW.Repo.Migrations.CreateGW.Comment.Type do
             add :primary_contact_first_name :string, size: 100
             add :primary_contact_last_name :string, size: 100
             add :primary_contact_email :string, size: 100
-            
-
+            add :is_open_saturday :boolean, null: false
+            add :is_open_sunday :boolean, null: false
+            add :has_good_finders :boolean, null: false
           timestampstz()
     end
 

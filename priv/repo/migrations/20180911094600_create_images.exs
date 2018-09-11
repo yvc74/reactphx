@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.CreateGW.Comment.Type do
+defmodule GW.Repo.Migrations.CreateGW.Images do
     use Ecto.Migration
   
     def change do
