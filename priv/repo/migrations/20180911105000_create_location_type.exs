@@ -2,10 +2,11 @@ defmodule GW.Repo.Migrations.CreateGW.Comment.Type do
     use Ecto.Migration
   
     def change do
-      create table(:comment_type) do
-        add :comment_type_name, :string, null:false
+        create table(:location_type) do
+          add :location_type_name, :string, size: 55, null: false
         timestampstz()
-      end
-  
     end
+
   end
+  
+end
