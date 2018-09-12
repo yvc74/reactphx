@@ -19,7 +19,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailers do
           add :trailer_make_id, references(:trailer_make, on_delete: :delete_all), null: false
           add :serial_number, :string, size: 75, null: false
           add :tag_number, :string, size: 20, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)  
     end
 
     create index(:locations, [:location_id])

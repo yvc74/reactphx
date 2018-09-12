@@ -15,7 +15,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Maintenance do
           add :trailer_condition_comment_id, references(:comments, on_delete: :delete_all)
           add :actual_delivery_date, :date
           add :maintenance_comment_id, references(:comments, on_delete: :delete_all)
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
         create index(:request_trailer_maintenance_type, [:maintenance_type_id])
         create index(:comments, [:maintenance_comment_id])

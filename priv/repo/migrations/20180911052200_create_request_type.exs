@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.Request.Type do
     def change do
       create table(:request_type) do
         add :request_type_name, :string, size: 75, null: false
-      timestampstz()
+      timestamps(type: :timestamptz)
       end
       
     end

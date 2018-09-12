@@ -8,7 +8,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Invoice.Detail do
             add :invoice_date, :date, null: false
             add :invoice_total, :float, precision: 15, scale: 2, null: false
             add :request_id, references(:requests, on_delete: :delete_all), null: false
-          timestampstz()
+        timestamps(type: :timestamptz)
     end
 
         create index(:images, [:image_guid])

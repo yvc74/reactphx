@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Make do
     def change do
         create table(:trailer_make) do
           add :trailer_make_name, :string, size: 75, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
   end

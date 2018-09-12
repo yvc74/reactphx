@@ -16,7 +16,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Unintended.Donation do
           add :found_at, :datetime
           add :returned_at, :datetime
           add :dsc, references(:comments, on_delete: :delete_all) 
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
     create index(:locations, [:location_id])

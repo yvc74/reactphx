@@ -5,7 +5,7 @@ defmodule GW.Repo.Migrations.CreateGW.Image.Adc.Trailer.Progress do
         create table(:image_adc_trailer_progress) do
           add :image_guid, references(:images, on_delete: :delete_all), null: false
           add :adc_trailer_status_id, references(:history_adc_trailer_status, on_delete: :delete_all), null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
     create index(:images, [:image_guid])

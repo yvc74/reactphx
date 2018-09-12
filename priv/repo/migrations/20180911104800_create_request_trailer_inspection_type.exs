@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Inspection.Type do
     def change do
         create table(:request_trailer_inspection_type) do
           add :inspection_type_name, :string, size: 75, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
   end

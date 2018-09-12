@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.CreateGW.Location.Type do
     def change do
         create table(:location_type) do
           add :location_type_name, :string, size: 75, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
   end

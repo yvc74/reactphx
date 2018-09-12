@@ -23,7 +23,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Lease.Agreement do
           add :lessor_employee_name, :string, size: 75
           add :shuttle_fee, :boolean
           add :lessee_driver_id, references(:accounts_user, on_delete: :delete_all)
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
         create index(:locations, [:lessor_location_id])

@@ -5,7 +5,7 @@ defmodule GW.Repo.Migrations.CreateGW.Image.Maintenance do
         create table(:image_maintenance) do
           add :image_guid, references(:images, on_delete: :delete_all), null: false
           add :request_id, references(:requests, on_delete: :delete_all), null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
     create index(:images, [:image_guid])

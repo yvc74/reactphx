@@ -5,7 +5,7 @@ defmodule GW.Repo.Migrations.CreateGW.Comment.Type do
       create table(:comment_type) do
         add :comment_type_name, :string, size: 75, null:false
       timestamps(type: :timestamptz)
-      end
-  
     end
+  
   end
+end
