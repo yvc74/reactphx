@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.CreateGW.Region do
     def change do
         create table(:region) do
           add :region_name, :string, size: 75, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
   end

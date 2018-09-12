@@ -13,8 +13,6 @@ defmodule GW.Accounts.User do
     field :password, :string, virtual: true
 
     has_many :time_entries, GW.TimeBoundries.TimeEntry
-    many_to_many :boards, GW.Workspaces.Board,
-      join_through: "board_users"
 
     timestamps()
   end

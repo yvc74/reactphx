@@ -4,12 +4,12 @@ defmodule GW.Repo.Migrations.CreateGW.Image.User do
     def change do
        create table(:image_user) do
          add :image_guid, references(:images, on_delete: :delete_all), null: false
-         add :user_id, references(:users, on_delete: :delete_all), null: false     
+         add :user_id, references(:accounts_user, on_delete: :delete_all), null: false     
         timestampstz()
       end
 
       create index(:images, [:image_guid])
-      create index(:users, [:user_id])
+      create index(:accounts_user, [:user_id])
       
     end
     

@@ -4,7 +4,7 @@ defmodule GW.Repo.Migrations.CreateGW.Roles do
     def change do
         create table(:roles) do
           add :role_title, :string, size: 75, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
   end

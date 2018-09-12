@@ -53,7 +53,6 @@ class HomeIndexView extends React.Component {
           const newTimeEntry = {
             started_at: moment.utc().toISOString(),
             description: timeEntry.description,
-            workspace_id: null,
           };
 
           channel.push('time_entry:start', newTimeEntry)

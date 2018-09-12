@@ -4,11 +4,11 @@ defmodule GW.Repo.Migrations.CreateGW.Images do
     def change do
        create table(:images, primary_key: false) do
          add :image_guid, :string, size: 255, primary_key: true, null: false
-         add :user_id, references(:users, on_delete: :delete_all), null: false     
+         add :user_id, references(:accounts_user, on_delete: :delete_all), null: false     
         timestampstz()
       end
 
-      create index(:users, [:user_id])
+      create index(:accounts_user, [:user_id])
 
     end
     

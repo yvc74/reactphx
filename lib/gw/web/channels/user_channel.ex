@@ -23,15 +23,13 @@ defmodule GW.Web.UserChannel do
   def handle_in("time_entry:start",
   %{
     "started_at" => started_at,
-    "description" => description,
-    "workspace_id" => workspace_id
+    "description" => description
   }, socket) do
 
     current_user = socket.assigns.current_user
 
     attributes = %{
       description: description,
-      board_id: workspace_id,
       user_id: current_user.id,
       started_at: started_at
     }

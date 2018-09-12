@@ -5,8 +5,8 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Service do
         create table(:request_trailer_service) do
           add :request_id, references(:requests, on_delete: :delete_all), null: false
           add :location_id, references(:locations, on_delete: delete_all), null: false
-          add :user_id, references(:users, on_delete: :delete_all), null: false
-          add :driver_id, references(:users, on_delete: :delete_all)
+          add :user_id, references(:accounts_user, on_delete: :delete_all), null: false
+          add :driver_id, references(:accounts_user, on_delete: :delete_all)
           add :requested_delivery_on, :date, null: false
           add :requested_time_of_day_id, references(:time_of_day, on_delete: :delete_all)
           add :requested_delivery_from, :datetime
@@ -39,8 +39,8 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Service do
 
     create index(:requests, [:request_id])
     create index(:locations, [:location_id])
-    create index(:users, [:user_id])
-    create index(:users, [:driver_id])
+    create index(:accounts_user, [:user_id])
+    create index(:accounts_user, [:driver_id])
     create index(:time_of_day, [:requested_time_of_day_id])
     create index(:comments, [:request_comment_id])
     create index(:comments, [:trailer_condition_comment_id])

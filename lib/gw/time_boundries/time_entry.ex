@@ -2,7 +2,7 @@ defmodule GW.TimeBoundries.TimeEntry do
   use Ecto.Schema
   use Timex
   import Ecto.{ Query, Changeset }
-  alias GW.{ TimeBoundries.TimeEntry, Accounts.User, Workspace.Board }
+  alias GW.{ TimeBoundries.TimeEntry, Accounts.User }
 
   @derive {Poison.Encoder, only: [
     :id, :description, :started_at, :stopped_at, :restarted_at, :duration,
@@ -16,7 +16,6 @@ defmodule GW.TimeBoundries.TimeEntry do
     field :started_at, :naive_datetime
     field :stopped_at, :naive_datetime
 
-    belongs_to :board, Board
     belongs_to :user, User
 
     timestamps()
@@ -27,7 +26,7 @@ defmodule GW.TimeBoundries.TimeEntry do
     time_entry
     |> cast(attrs, [
       :description, :started_at, :stopped_at, :restarted_at, :duration,
-      :user_id, :board_id
+      :user_id
     ])
     |> validate_required([:started_at])
     |> foreign_key_constraint(:user_id)
@@ -67,7 +66,7 @@ defmodule GW.TimeBoundries.TimeEntry do
     model
     |> changeset(params)
     |> cast(
-      params, [:description, :stopped_at, :duration, :board_id, :restarted_at]
+      params, [:description, :stopped_at, :duration, :restarted_at]
     )
     |> validate_required([:restarted_at])
     |> put_change(:stopped_at, nil)

@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="melissa@txable.com">
+    <meta name="author" content="melissa@sightsource.net">
 
-    <title>TimeAblex</title>
+    <title>GoodWill DispatchBoard</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600|Ropa+Sans" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link id="favicon" rel="icon" type="image/png" href="<%= static_path(@conn, "/images/favicon.png") %>"/>

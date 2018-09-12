@@ -22,7 +22,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Lease.Agreement do
           add :lease_trailer_condition_comment_id, references(:comments, on_delete: :delete_all)
           add :lessor_employee_name, :string, size: 75
           add :shuttle_fee, :boolean
-          add :lessee_driver_id, references(:users, on_delete: :delete_all)
+          add :lessee_driver_id, references(:accounts_user, on_delete: :delete_all)
         timestampstz()
     end
 
@@ -39,7 +39,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Lease.Agreement do
         create index(:trailer_lease_condition_type, [:pre_lease_exterior_condition_id])
         create index(:tire_size, [:tire_size_id])
         create index(:comments, [:lease_trailer_condition_comment_id])
-        create index(:users, [:lessee_driver_id])
+        create index(:accounts_user, [:lessee_driver_id])
 
   end
   

@@ -10,9 +10,9 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Unintended.Donation do
           add :donated_at, :datetime, null: false
           add :trailer_percent_full_estimate, :integer, null: false
           add :trailer_id, references(:trailers, on_delete: :delete_all), null: false
-          add :entered_by_user_id, references(:users, on_delete: :delete_all), null: false
+          add :entered_by_user_id, references(:accounts_user, on_delete: :delete_all), null: false
           add :entered_at, :datetime, null: false
-          add :reported_by_user_id, references(:users, on_delete: :delete_all) null: false
+          add :reported_by_user_id, references(:accounts_user, on_delete: :delete_all) null: false
           add :found_at, :datetime
           add :returned_at, :datetime
           add :dsc, references(:comments, on_delete: :delete_all) 
@@ -21,8 +21,8 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Unintended.Donation do
 
     create index(:locations, [:location_id])
     create index(:trailers, [:trailer_id])
-    create index(:users, [:entered_by_user_id])
-    create index(:users, [:reported_by_user_id])
+    create index(:accounts_user, [:entered_by_user_id])
+    create index(:accounts_user, [:reported_by_user_id])
     create index(:comments, [:dsc])
 
   end

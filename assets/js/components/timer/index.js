@@ -42,7 +42,6 @@ export default class Timer extends React.Component {
     const timeEntry = {
       started_at: startedAt,
       description: description.value.trim(),
-      workspace_id: null,
     };
 
     channel.push('time_entry:start', timeEntry)

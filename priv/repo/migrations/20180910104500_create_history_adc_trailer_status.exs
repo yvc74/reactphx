@@ -7,12 +7,12 @@ defmodule GW.Repo.Migrations.CreateGW.History.Adc.Trailer.Status do
         add :percent_full, :integer, null: false
         add :donation_count, :integer, null: false
         add :captured_at, :datetime, null: false
-        add :user_id, references(:users, on_delete: :delete_all), null: false
-      timestamps()
+        add :user_id, references(:accounts_user, on_delete: :delete_all), null: false
+      timestamps(type: :timestamptzs)
       end
   
       create index(:trailers, [:trailer_id])
-      create index(:users, [:user_id])
+      create index(:accounts_user, [:user_id])
 
     end
   end
