@@ -5,16 +5,35 @@ defmodule GW.Accounts.User do
 
   @derive {Poison.Encoder, only: [:id, :firstname, :last_name, :email]}
 
-  schema "accounts_users" do
-    field :email, :string
-    field :encrypted_password, :string
+  schema "accounts_user" do
     field :firstname, :string
     field :lastname, :string
+    field :username, :string
+    field :email, :string
+    field :encrypted_password, :string
+    field :time_zone_id, :integer
+    field :home_location_id, :integer
     field :password, :string, virtual: true
 
+    belongs_to :role, User.Roles
+
+    has_many :time_entries, GW.TimeBoundries.TimeEntry
+    has_many :comments, GW.Comments
+    has_many :history_adc_trailer_status, GW.History.Adc.Trailer.Status
+    has_many :history_store_request_status_update, GW.History.Store.Request.Status.Update
+    has_many :history_trailer_content, GW.History.Trailer.Content
+    has_many :history_trailer_service_request_status, GW.History.Trailer.Service.Request.Status
+    has_many :history_trailer_status, GW.History.Trailer.Status
+    has_many :user_images, GW.Image.User
+    has_many :images, GW.Images
+    has_many :location_primary_contact_user, GW.location
+    has_many :request_trailer_inspection, GW.Request.Trailer.Inspection
     has_many :time_entries, GW.TimeBoundries.TimeEntry
 
-    timestamps()
+    many_to_many :roles, GW.Roles
+      join_through: "user_roles"
+
+    timestamps(type: :utc_datetime)
   end
 
   @doc false
@@ -36,7 +55,7 @@ defmodule GW.Accounts.User do
           :encrypted_password,
           Comeonin.Bcrypt.hashpwsalt(password)
         )
-      _ ->
+        ->
         current_changeset
     end
   end

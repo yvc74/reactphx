@@ -42,8 +42,8 @@ class SessionsNewView extends React.Component {
               <div className="logo" />
               {creditsText()}
             </header>
-            <form id="sign_in_form" onSubmit={::this._handleSubmit}>
-              {::this._renderError()}
+            <form id="sign_in_form" onSubmit={this._handleSubmit}>
+              {this._renderError()}
               <div className="field">
                 <input
                   ref="email"

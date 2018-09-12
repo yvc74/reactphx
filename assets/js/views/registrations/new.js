@@ -38,7 +38,7 @@ class RegistrationsNewView extends React.Component {
               <div className="logo" />
               {creditsText()}
             </header>
-            <form id="sign_up_form" onSubmit={::this._handleSubmit}>
+            <form id="sign_up_form" onSubmit={this._handleSubmit}>
               <div className="field">
                 <input ref="firstname" id="user_first_name" type="text" placeholder="First name" required={true} />
                 {renderErrorsFor(errors, 'firstname')}

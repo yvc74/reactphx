@@ -164,7 +164,7 @@ export default class Timer extends React.Component {
     if (!started) return false;
 
     return (
-      <a href="#" onClick={::this._handleDiscardClick}>Discard</a>
+      <a href="#" onClick={this._handleDiscardClick}>Discard</a>
     );
   }
 
@@ -179,7 +179,7 @@ export default class Timer extends React.Component {
     return (
       <div className="timer-container">
         <div className="timer-actions">
-          {::this._renderDiscardLink()}
+          {this._renderDiscardLink()}
         </div>
         <div className="timer-wrapper">
           <div className="description-container">
@@ -188,8 +188,8 @@ export default class Timer extends React.Component {
               ref="description"
               placeholder="What are you working on?"
               tabIndex="1"
-              onBlur={::this._updateTimeEntryDescription}
-              onKeyUp={::this._handleDescriptionKeyUp}/>
+              onBlur={this._updateTimeEntryDescription}
+              onKeyUp={this._handleDescriptionKeyUp}/>
           </div>
           <div className="date-time-container">
             <input
@@ -204,7 +204,7 @@ export default class Timer extends React.Component {
             <button
               tabIndex="3"
               className={buttonClasses}
-              onClick={::this._handleButtonClick}>{::this._buttonText()}</button>
+              onClick={this._handleButtonClick}>{this._buttonText()}</button>
           </div>
         </div>
       </div>

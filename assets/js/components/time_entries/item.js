@@ -62,7 +62,7 @@ export default class TimeEntryItem extends React.Component {
     };
 
     return (
-      <PageClick onClick={::this._handlePageClick}>
+      <PageClick onClick={this._handlePageClick}>
         <div className="dropdown">
           <ul>
             <li>
@@ -87,8 +87,8 @@ export default class TimeEntryItem extends React.Component {
 
     if (inEditMode) {
       return (
-        <PageClick onClick={::this._removeEditMode}>
-          <input type="text" ref="description" defaultValue={descriptionText} onKeyUp={::this._handleDescriptionKeyUp}/>
+        <PageClick onClick={this._removeEditMode}>
+          <input type="text" ref="description" defaultValue={descriptionText} onKeyUp={this._handleDescriptionKeyUp}/>
         </PageClick>
       );
     } else {
@@ -130,19 +130,19 @@ export default class TimeEntryItem extends React.Component {
     return (
       <li>
         <div className={checkboxClasses}>
-          <input checked={selected} ref="checkbox" id={id} type="checkbox" onChange={::this._handleCheckboxChange}/>
+          <input checked={selected} ref="checkbox" id={id} type="checkbox" onChange={this._handleCheckboxChange}/>
           <label htmlFor={id}></label>
-          <i className="fa fa-caret-down" onClick={::this._handleToggleDropdownClick}/>
-          {::this._renderDropdown()}
+          <i className="fa fa-caret-down" onClick={this._handleToggleDropdownClick}/>
+          {this._renderDropdown()}
         </div>
-        <div className="description-container" onClick={::this._handleEditClick}>
-          {::this._renderDescription()}
+        <div className="description-container" onClick={this._handleEditClick}>
+          {this._renderDescription()}
         </div>
         <div className="continue-container">
-          <a href="#" onClick={::this._handleContinueClick}><i className="fa fa-play"/></a>
+          <a href="#" onClick={this._handleContinueClick}><i className="fa fa-play"/></a>
         </div>
         <div className="duration-container">
-          {::this._renderDuration(duration)}
+          {this._renderDuration(duration)}
         </div>
       </li>
     );
