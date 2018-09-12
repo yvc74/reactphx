@@ -20,8 +20,8 @@ defmodule GW.Repo.Migrations.CreateGW.Route.Segments do
       create index(:routes, [:route_id])
       create index(:requests, [:request_id])
       create index(:locations, [:from_location_id])
-      create index(:comments, [:route_comment_id])
-      create index(:users, [:created_by_user_id])
+      create index(:comments, [:route_segment_comment_id])
+      create index(:locations, [:to_location_id])
       
     end
     

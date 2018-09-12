@@ -1,8 +1,8 @@
-defmodule GW.Repo.Migrations.CreateGW.Adc.Trailer.Status do
+defmodule GW.Repo.Migrations.CreateGW.History.Adc.Trailer.Status do
     use Ecto.Migration
   
     def change do
-      create table(:adc_trailer_status) do
+      create table(:history_adc_trailer_status) do
         add :trailer_id, references(:trailers, on_delete: :delete_all), null: false
         add :percent_full, :integer, null: false
         add :donation_count, :integer, null: false
