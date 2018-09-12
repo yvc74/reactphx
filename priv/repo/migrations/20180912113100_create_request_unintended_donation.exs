@@ -15,7 +15,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Unintended.Donation do
           add :reported_by_user_id, references(:accounts_user, on_delete: :delete_all) null: false
           add :found_at, :datetime
           add :returned_at, :datetime
-          add :dsc, references(:comments, on_delete: :delete_all) 
+          add :dsc, references(:comment, on_delete: :delete_all) 
         timestamps(type: :timestamptz)
     end
 
@@ -23,7 +23,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Unintended.Donation do
     create index(:trailers, [:trailer_id])
     create index(:accounts_user, [:entered_by_user_id])
     create index(:accounts_user, [:reported_by_user_id])
-    create index(:comments, [:dsc])
+    create index(:comment, [:dsc])
 
   end
   

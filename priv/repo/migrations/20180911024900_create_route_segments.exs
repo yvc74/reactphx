@@ -13,14 +13,14 @@ defmodule GW.Repo.Migrations.CreateGW.Route.Segments do
           add :actual_picked_up_at, :datetime, null: false
           add :actual_dropped_off_at, :datetime, null: false
           add :actual_ending_odometer, :float, precision: 15
-          add :route_segment_comment_id, references(:comments, on_delete: :delete_all)
+          add :route_segment_comment_id, references(:comment, on_delete: :delete_all)
         timestamps(type: :timestamptz)
       end
 
       create index(:routes, [:route_id])
       create index(:requests, [:request_id])
       create index(:locations, [:from_location_id])
-      create index(:comments, [:route_segment_comment_id])
+      create index(:comment, [:route_segment_comment_id])
       create index(:locations, [:to_location_id])
       
     end

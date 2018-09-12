@@ -13,7 +13,7 @@ defmodule GW.Repo.Migrations.Request.Trailer.Inspection. do
           add :trailer_location_id, references(:locations, on_delete: :delete_all)
           add :performed_by_user_id, references(:accounts_user, on_delete: :delete_all)
           add :performed_by_name, :string, size: 50
-          add :inspection_comment_id, references(:comments, on_delete: :delete_all)
+          add :inspection_comment_id, references(:comment, on_delete: :delete_all)
         timestamps(type: :timestamptz)
       end
 
@@ -23,7 +23,7 @@ defmodule GW.Repo.Migrations.Request.Trailer.Inspection. do
       create index(:trailers, [:trailer_id])
       create index(:locations, [:preferred_vendor_location_id])
       create index(:locations, [:trailer_location_id])
-      create index(:comments, [:inspection_comment_id])
+      create index(:comment, [:inspection_comment_id])
 
 
     end

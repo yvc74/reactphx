@@ -12,19 +12,19 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Maintenance do
           add :quoted_start_date, :date
           add :quoted_delivery_date, :date
           add :quoted_estimated_cost, :float, precision: 15
-          add :trailer_condition_comment_id, references(:comments, on_delete: :delete_all)
+          add :trailer_condition_comment_id, references(:comment, on_delete: :delete_all)
           add :actual_delivery_date, :date
-          add :maintenance_comment_id, references(:comments, on_delete: :delete_all)
+          add :maintenance_comment_id, references(:comment, on_delete: :delete_all)
         timestamps(type: :timestamptz)
     end
         create index(:request_trailer_maintenance_type, [:maintenance_type_id])
-        create index(:comments, [:maintenance_comment_id])
+        create index(:comment, [:maintenance_comment_id])
         create index(:requests, [:request_id])
         create index(:locations, [:location_id])
         create index(:accounts_user, [:user_id])
         create index(:trailers, [:trailer_id])
         create index(:locations, [:preferred_vendor_location_id])
-        create index(:comments, [:trailer_condition_comment_id])
+        create index(:comment, [:trailer_condition_comment_id])
 
   end
   

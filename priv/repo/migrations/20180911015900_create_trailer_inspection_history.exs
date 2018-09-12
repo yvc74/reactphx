@@ -11,7 +11,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Inspection.History do
         add :occured_at, :datetime
         add :location_id, references(:locations, on_delete: :delete_all)
         add :performed_by_name, :string, size: 50
-        add :inspection_comment_id, references(:comments, on_delete: :delete_all)
+        add :inspection_comment_id, references(:comment, on_delete: :delete_all)
       timestamps(type: :timestamptz)
     end
 
@@ -20,7 +20,7 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Inspection.History do
     create index(:accounts_user, [:user_id])
     create index(:locations, [:preferred_vendor_location_id])
     create index(:locations, [:location_id])
-    create index(:comments, [:inspection_comment_id])
+    create index(:comment, [:inspection_comment_id])
 
   end
   
