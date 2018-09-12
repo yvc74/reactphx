@@ -14,6 +14,7 @@ defmodule GW.Repo.Migrations.CreateGW.Locations do
             add :location_phone, :string, size: 20, null: false
             add :latitude, :float, precision: 15, null: false
             add :longitude, :float, precision: 15, null: false
+            add :time_zone_id, references(:time_zone, on_delete: :delete_all), null: false
             add :primary_contact_user_id, references(:users, on_delete: :delete_all)
             add :primary_contact_phone :string, size: 20
             add :primary_contact_first_name :string, size: 100
@@ -28,6 +29,7 @@ defmodule GW.Repo.Migrations.CreateGW.Locations do
     create index(:region, [:region_id])
     create index(:location_type, [:location_type_id])
     create index(:users, [:primary_contact_user_id])
+    create index(:time_zone, [:time_zone_id])
 
   end
   
