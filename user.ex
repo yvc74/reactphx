@@ -5,7 +5,7 @@ defmodule GW.Accounts.User do
 
   @derive {Poison.Encoder, only: [:id, :firstname, :last_name, :email]}
 
-  schema "accounts_users" do
+  schema "user" do
     field :email, :string
     field :encrypted_password, :string
     field :firstname, :string
