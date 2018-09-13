@@ -22,7 +22,7 @@ class Header extends React.Component {
     });
 
     return (
-      <a href="#" onClick={::this._handleShowDropdownClick} className={classes}>
+      <a href="#" onClick={this._handleShowDropdownClick} className={classes}>
         {currentUser.first_name}
       </a>
     );
@@ -42,7 +42,7 @@ class Header extends React.Component {
     if (!show) return false;
 
     return (
-      <PageClick onClick={::this._handlePageClick}>
+      <PageClick onClick={this._handlePageClick}>
         <ul className="dropdown">
           <li>
             {this._renderSignOutLink()}
@@ -64,7 +64,7 @@ class Header extends React.Component {
     }
 
     return (
-      <a href="#" onClick={::this._handleSignOutClick}>Sign out</a>
+      <a href="#" onClick={this._handleSignOutClick}>Sign out</a>
     );
   }
 

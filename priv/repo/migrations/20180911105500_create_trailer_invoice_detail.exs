@@ -7,12 +7,12 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Invoice.Detail do
             add :invoice_number, :string, size: 75, null: false
             add :invoice_date, :date, null: false
             add :invoice_total, :float, precision: 15, scale: 2, null: false
-            add :request_id, references(:requests, on_delete: :delete_all), null: false
+            add :request_id, references(:request, on_delete: :delete_all), null: false
         timestamps(type: :timestamptz)
     end
 
         create index(:image, [:image_guid])
-        create index(:requests, [:request_id])
+        create index(:request, [:request_id])
 
   end
   

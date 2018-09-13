@@ -3,7 +3,7 @@ defmodule GW.Repo.Migrations.CreateGW.History.Adc.Trailer.Status do
   
     def change do
         create table(:history_adc_trailer_status) do
-          add :trailer_id, references(:trailers, on_delete: :delete_all), null: false
+          add :trailer_id, references(:trailer, on_delete: :delete_all), null: false
           add :percent_full, :integer, null: false
           add :donation_count, :integer, null: false
           add :captured_at, :datetime, null: false
@@ -11,7 +11,7 @@ defmodule GW.Repo.Migrations.CreateGW.History.Adc.Trailer.Status do
         timestamps(type: :timestamptzs)
       end
   
-      create index(:trailers, [:trailer_id])
+      create index(:trailer, [:trailer_id])
       create index(:accounts_user, [:user_id])
 
     end

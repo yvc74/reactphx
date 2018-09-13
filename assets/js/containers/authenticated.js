@@ -40,7 +40,7 @@ class AuthenticatedContainer extends React.Component {
 
     return (
       <div id="authentication_container" className="application-container">
-        {::this._renderFavicon()}
+        {this._renderFavicon()}
         <Header/>
 
         <div className='main-container'>

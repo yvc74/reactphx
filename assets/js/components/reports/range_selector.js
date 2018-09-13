@@ -9,16 +9,16 @@ export default class RangeSelector extends React.Component {
     if (!show) return false;
 
     return (
-      <PageClick onClick={::this._hideDropdown}>
+      <PageClick onClick={this._hideDropdown}>
         <ul className="dropdown">
           <li>
-            <a href="#" onClick={::this._fetchOneWeek}>This week</a>
+            <a href="#" onClick={this._fetchOneWeek}>This week</a>
           </li>
           <li>
-            <a href="#" onClick={::this._fetchTwoWeeks}>Last two weeks</a>
+            <a href="#" onClick={this._fetchTwoWeeks}>Last two weeks</a>
           </li>
           <li>
-            <a href="#" onClick={::this._fetchFourWeeks}>This month</a>
+            <a href="#" onClick={this._fetchFourWeeks}>This month</a>
           </li>
         </ul>
       </PageClick>
@@ -67,8 +67,8 @@ export default class RangeSelector extends React.Component {
       <div className="range-selector">
         <ul>
           <li>
-            <h2 onClick={::this._handleShowClick}>{text}</h2>
-            {::this._renderDropdown(show)}
+            <h2 onClick={this._handleShowClick}>{text}</h2>
+            {this._renderDropdown(show)}
           </li>
         </ul>
       </div>
