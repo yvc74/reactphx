@@ -1,8 +1,8 @@
-defmodule GW.Repo.Migrations.CreateGW.Locations do
+defmodule GW.Repo.Migrations.CreateGW.Location do
     use Ecto.Migration
   
     def change do
-        create table(:locations) do
+        create table(:location) do
           add :region_id, references(:region, on_delete: :delete_all), null: false
           add :location_type_id, references(:location_type, on_delete: :delete_all), null: false
           add :location_name, :string, size: 100, null: false
