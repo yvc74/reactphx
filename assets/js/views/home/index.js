@@ -79,15 +79,15 @@ class HomeIndexView extends React.Component {
               <input checked={selected} id={date} type="checkbox" onChange={onCheckboxChange}/>
               <label htmlFor={date}></label>
               <i className="fa fa-caret-down" onClick={onToggleDropdownClick}/>
-              {::this._renderDropdown(header, showDropdown)}
+              {this._renderDropdown(header, showDropdown)}
             </div>
             <div className="description-container">
               <span className="title">{header}</span>
-              <small>{::this._renderTotalTime(items)}</small>
+              <small>{this._renderTotalTime(items)}</small>
             </div>
           </header>
           <ul>
-            {::this._itemNodes(header, items, onContinueClick)}
+            {this._itemNodes(header, items, onContinueClick)}
           </ul>
         </section>
       );
@@ -125,7 +125,7 @@ class HomeIndexView extends React.Component {
     };
 
     return (
-      <PageClick onClick={::this._handlePageClick}>
+      <PageClick onClick={this._handlePageClick}>
         <div className="dropdown">
           <ul>
             <li>
@@ -203,7 +203,7 @@ class HomeIndexView extends React.Component {
             channel={channel}
             dispatch={dispatch}
             {...timer} />
-          {::this._renderItems()}
+          {this._renderItems()}
         </div>
       </div>
     );

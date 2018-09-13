@@ -44,13 +44,13 @@ export default class ReportContainer extends React.Component {
     return (
       <section className="chart-container">
         <header>
-          Total <span className="total">{::this._renderTotalTime(data)}</span>
+          Total <span className="total">this._renderTotalTime(data)}</span>
         </header>
         <div className="js-chart-container">
           <div className="barchart-container">
             <div className={chartClasses}>
               <ChartGrid />
-              {::this._renderBars(data, hideLabels)}
+              {this._renderBars(data, hideLabels)}
             </div>
           </div>
         </div>

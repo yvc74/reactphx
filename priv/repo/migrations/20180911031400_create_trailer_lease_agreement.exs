@@ -3,8 +3,8 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Lease.Agreement do
   
     def change do
         create table(:trailer_lease_agreement) do
-          add :lessor_location_id, references(:locations, on_delete: :delete_all), null: false
-          add :trailer_id, references(:trailers, on_delete: :delete_all), null: false
+          add :lessor_location_id, references(:location, on_delete: :delete_all), null: false
+          add :trailer_id, references(:trailer, on_delete: :delete_all), null: false
           add :trailer_owner_id, references(:trailer_owner, on_delete: :delete_all), null: false
           add :lease_date, :date, null: false
           add :due_on, :date
@@ -26,8 +26,8 @@ defmodule GW.Repo.Migrations.CreateGW.Trailer.Lease.Agreement do
         timestamps(type: :timestamptz)
     end
 
-        create index(:locations, [:lessor_location_id])
-        create index(:trailers, [:trailer_id])
+        create index(:location, [:lessor_location_id])
+        create index(:trailer, [:trailer_id])
         create index(:trailer_owner, [:trailer_owner_id])
         create index(:trailer_lease_condition_type, [:pre_lease_landing_gear_cross_members_condition_id])
         create index(:trailer_lease_condition_type, [:pre_lease_mud_flaps_condition_id])

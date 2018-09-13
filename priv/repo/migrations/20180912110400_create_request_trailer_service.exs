@@ -3,8 +3,8 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Service do
   
     def change do
       create table(:request_trailer_service) do
-        add :request_id, references(:requests, on_delete: :delete_all), null: false
-        add :location_id, references(:locations, on_delete: delete_all), null: false
+        add :request_id, references(:request, on_delete: :delete_all), null: false
+        add :location_id, references(:location, on_delete: delete_all), null: false
         add :user_id, references(:accounts_user, on_delete: :delete_all), null: false
         add :driver_id, references(:accounts_user, on_delete: :delete_all)
         add :requested_delivery_on, :date, null: false
@@ -37,8 +37,8 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Service do
       timestamps(type: :timestamptz)
     end
 
-    create index(:requests, [:request_id])
-    create index(:locations, [:location_id])
+    create index(:request, [:request_id])
+    create index(:location, [:location_id])
     create index(:accounts_user, [:user_id])
     create index(:accounts_user, [:driver_id])
     create index(:time_of_day, [:requested_time_of_day_id])

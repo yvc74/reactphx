@@ -9,13 +9,13 @@ defmodule GW.Repo.Migrations.CreateGW.Accounts.User do
       add :email, :string, size: 100, null: false
       add :encrypted_password :string, size: 255, null: false
       add :time_zone_id, references(:time_zone, on_delete: : delete_all), null: false
-      add :home_location_id, references(:locations, on_delete: : delete_all), null: false
+      add :home_location_id, references(:location, on_delete: : delete_all), null: false
 
       timestamps(type: :timestamptz)
     end
     
     create index(:time_zone, [:time_zone_id])
-    create index(:locations, [:home_location_id])
+    create index(:location, [:home_location_id])
     
   end
 
