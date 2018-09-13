@@ -1,112 +1,112 @@
-defmodule GW.Roles do
-    use Ecto.Schema
-    import Ecto.{ Query, Changeset }, warn: false
-    alias GW.Repo
-    alias GW.{ User.Roles }
+# defmodule GW.Roles do
+#     use Ecto.Schema
+#     import Ecto.{ Query, Changeset }, warn: false
+#     alias GW.Repo
+#     alias GW.{ User.Roles }
   
      
-    schema "roles" do
-      field :role_title, :string
+#     schema "roles" do
+#       field :role_title, :string
         
-      belongs_to :accounts_user, User.Roles
+#       belongs_to :accounts_user, User.Roles
   
-      timestamps(type: :utc_datetime)
-    end
+#       timestamps(type: :utc_datetime)
+#     end
 
-  @doc """
-  Returns the list of roles.
+#   @doc """
+#   Returns the list of roles.
 
-  ## Examples
+#   ## Examples
 
-      iex> list_roles()
-      [%Role{}, ...]
+#       iex> list_roles()
+#       [%Role{}, ...]
 
-  """
-  def list_roles do
-    Repo.all(Role)
-  end
+#   """
+#   def list_roles do
+#     Repo.all(Role)
+#   end
 
-  @doc """
-  Gets a single role.
+#   @doc """
+#   Gets a single role.
 
-  Raises `Ecto.NoResultsError` if the Role does not exist.
+#   Raises `Ecto.NoResultsError` if the Role does not exist.
 
-  ## Examples
+#   ## Examples
 
-      iex> get_role!(123)
-      %Role{}
+#       iex> get_role!(123)
+#       %Role{}
 
-      iex> get_role!(456)
-      ** (Ecto.NoResultsError)
+#       iex> get_role!(456)
+#       ** (Ecto.NoResultsError)
 
-  """
-  def get_role!(id), do: Repo.get!(Role, id)
+#   """
+#   def get_role!(id), do: Repo.get!(Role, id)
 
-  @doc """
-  Creates a role.
+#   @doc """
+#   Creates a role.
 
-  ## Examples
+#   ## Examples
 
-      iex> create_role(%{field: value})
-      {:ok, %Role{}}
+#       iex> create_role(%{field: value})
+#       {:ok, %Role{}}
 
-      iex> create_role(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+#       iex> create_role(%{field: bad_value})
+#       {:error, %Ecto.Changeset{}}
 
-  """
-  def create_role(attrs \\ %{}) do
-    %Role{}
-    |> Role.changeset(attrs)
-    |> Repo.insert()
-  end
+#   """
+#   def create_role(attrs \\ %{}) do
+#     %Role{}
+#     |> Role.changeset(attrs)
+#     |> Repo.insert()
+#   end
 
-  @doc """
-  Updates a role.
+#   @doc """
+#   Updates a role.
 
-  ## Examples
+#   ## Examples
 
-      iex> update_role(role, %{field: new_value})
-      {:ok, %Role{}}
+#       iex> update_role(role, %{field: new_value})
+#       {:ok, %Role{}}
 
-      iex> update_role(role, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+#       iex> update_role(role, %{field: bad_value})
+#       {:error, %Ecto.Changeset{}}
 
-  """
-  def update_role(%Role{} = role, attrs) do
-    role
-    |> Role.changeset(attrs)
-    |> Repo.update()
-  end
+#   """
+#   def update_role(%Role{} = role, attrs) do
+#     role
+#     |> Role.changeset(attrs)
+#     |> Repo.update()
+#   end
 
-  @doc """
-  Deletes a Role.
+#   @doc """
+#   Deletes a Role.
 
-  ## Examples
+#   ## Examples
 
-      iex> delete_role(role)
-      {:ok, %Role{}}
+#       iex> delete_role(role)
+#       {:ok, %Role{}}
 
-      iex> delete_role(role)
-      {:error, %Ecto.Changeset{}}
+#       iex> delete_role(role)
+#       {:error, %Ecto.Changeset{}}
 
-  """
-  def delete_role(%Role{} = role) do
-    Repo.delete(role)
-  end
+#   """
+#   def delete_role(%Role{} = role) do
+#     Repo.delete(role)
+#   end
 
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking role changes.
+#   @doc """
+#   Returns an `%Ecto.Changeset{}` for tracking role changes.
 
-  ## Examples
+#   ## Examples
 
-      iex> change_role(role)
-      %Ecto.Changeset{source: %Role{}}
+#       iex> change_role(role)
+#       %Ecto.Changeset{source: %Role{}}
 
-  """
-  def change_role(%Role{} = role) do
-    Role.changeset(role, %{})
-  end
-end
+#   """
+#   def change_role(%Role{} = role) do
+#     Role.changeset(role, %{})
+#   end
+# end
 
  
   

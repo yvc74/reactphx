@@ -15,7 +15,7 @@ defmodule GW.Accounts.User do
     field :home_location_id, :integer
     field :password, :string, virtual: true
 
-    belongs_to :role, User.Roles
+    belongs_to :role, Role.User
 
     has_many :time_entries, GW.TimeBoundries.TimeEntry
     has_many :comments, GW.Comments
@@ -26,12 +26,11 @@ defmodule GW.Accounts.User do
     has_many :history_trailer_status, GW.History.Trailer.Status
     has_many :user_images, GW.Image.User
     has_many :images, GW.Images
-    has_many :location_primary_contact_user, GW.location
+    has_many :location_primary_contact_user, GW.Location
     has_many :request_trailer_inspection, GW.Request.Trailer.Inspection
-    has_many :time_entries, GW.TimeBoundries.TimeEntry
 
-    many_to_many :roles, GW.Roles
-      join_through: "user_roles"
+    # many_to_many :role, GW.Role
+    #   join_through: "role_user"
 
     timestamps(type: :utc_datetime)
   end
@@ -55,7 +54,7 @@ defmodule GW.Accounts.User do
           :encrypted_password,
           Comeonin.Bcrypt.hashpwsalt(password)
         )
-        ->
+         _->
         current_changeset
     end
   end
