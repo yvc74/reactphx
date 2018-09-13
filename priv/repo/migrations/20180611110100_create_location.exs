@@ -8,7 +8,7 @@ defmodule GW.Repo.Migrations.CreateGW.Location do
           add :location_name, :string, size: 100, null: false
           add :address_line_1, :string, size: 100, null: false
           add :address_line_2, :string, size: 100
-          add :city, :string, size: 100, null:false
+          add :city, :string, size: 100, null: false
           add :state_province, :string, size: 100, null: false
           add :zip, :string, size: 10, null: false
           add :location_phone, :string, size: 20, null: false
@@ -23,7 +23,7 @@ defmodule GW.Repo.Migrations.CreateGW.Location do
           add :is_open_saturday, :boolean, null: false
           add :is_open_sunday, :boolean, null: false
           add :has_good_finders, :boolean, null: false
-        timestampstz()
+        timestamps(type: :timestamptz)
     end
 
     create index(:region, [:region_id])
