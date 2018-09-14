@@ -8,10 +8,10 @@ defmodule GW.Repo.Migrations.CreateGW.TimeBoundries.TimeEntry do
           add :stopped_at, :naive_datetime
           add :restarted_at, :naive_datetime
           add :duration, :integer
-          add :person_id, references(:person, on_delete: :delete_all)
+          add :user_id, references(:user, on_delete: :delete_all)
         timestamps(type: :timestamptz)
     end
 
-    create index(:time_boundries_time_entries, [:person_id])
+    create index(:time_boundries_time_entries, [:user_id])
   end
 end
