@@ -10,7 +10,6 @@ defmodule GW.Repo.Migrations.CreateGW.Location do
           add :latitude, :"double precision", null: false
           add :longitude, :"double precision", null: false
           add :time_zone_id, references(:time_zone, on_delete: :delete_all), null: false
-          #add :primary_contact_person_id, references(:person, on_delete: :delete_all)
           add :is_open_saturday, :boolean, null: false
           add :is_open_sunday, :boolean, null: false
           add :has_good_finders, :boolean, null: false
@@ -21,7 +20,7 @@ defmodule GW.Repo.Migrations.CreateGW.Location do
     create index(:location, [:location_type_id])
     create index(:location, [:address_id])
     create index(:location, [:time_zone_id])
-    #create index(:location, [:primary_contact_person_id])
+
 
   end
 
