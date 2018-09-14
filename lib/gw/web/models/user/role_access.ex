@@ -1,4 +1,4 @@
-defmodule GW.Role.Access do
+defmodule GW.RoleAccess do
   use Ecto.Schema
   import Ecto.Changeset
   import Ecto.Query
