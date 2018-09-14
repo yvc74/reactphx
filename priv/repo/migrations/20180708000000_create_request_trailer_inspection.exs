@@ -12,7 +12,6 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Inspection do
           add :occured_at, :date
           add :trailer_location_id, references(:location, on_delete: :delete_all)
           add :performed_by_person_id, references(:person, on_delete: :delete_all)
-          #add :performed_by_name, :string, size: 50
           add :inspection_comment_id, references(:comment, on_delete: :delete_all)
           timestamps(type: :timestamptz)
       end

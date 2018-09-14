@@ -5,13 +5,12 @@ defmodule GW.Web.UserChannel do
   alias GW.TimeBoundries.{TimerMonitor, TimeEntry, TimeEntryActions}
   alias GW.{ Repo, Reports.Reporter }
 
-  def join("person:" <> person_id, _params, socket) do
-    person_id = String.to_integer(person_id)
+  def join("users:" <> user_id, _params, socket) do
+    user_id = String.to_integer(user_id)
     current_user = socket.assigns.current_user
 
-    # This is the section that converts our person_id into a user_id to pass user around on the front-end.
-    if person_id == current_user.id do
-      socket = set_active_time_entry(socket, person_id)
+    if user_id == current_user.id do
+      socket = set_active_time_entry(socket, user_id)
 
       {:ok, %{time_entry: socket.assigns.time_entry}, socket}
     else
@@ -142,7 +141,7 @@ defmodule GW.Web.UserChannel do
   def handle_in("reports:generate", %{"number_of_weeks" => number_of_weeks}, socket) do
     current_user = socket.assigns.current_user
 
-    data = %{person: current_user, number_of_weeks: number_of_weeks}
+    data = %{user: current_user, number_of_weeks: number_of_weeks}
       |> Reporter.generate
 
     {:reply, {:ok, data}, socket}
@@ -152,8 +151,8 @@ defmodule GW.Web.UserChannel do
   # assigns its TimeEntry to the socket. Otherwise it will try to
   # find an active TimeEntry in the database and start a new monitor
   # with it.
-  defp set_active_time_entry(socket, person_id) do
-    case TimerMonitor.info(person_id) do
+  defp set_active_time_entry(socket, user_id) do
+    case TimerMonitor.info(user_id) do
       %{time_entry_id: time_entry_id} ->
         time_entry = Repo.get! TimeEntry, time_entry_id
 

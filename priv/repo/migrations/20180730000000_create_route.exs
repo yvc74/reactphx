@@ -2,7 +2,7 @@ defmodule GW.Repo.Migrations.CreateGW.Route do
     use Ecto.Migration
 
       def change do
-        create table(:route) do
+        create table(:route)
           add :person_driver_id, references(:person, on_delete: :delete_all), null: false
           add :planned_start_at, :datetime, null: false
           add :planned_end_at, :datetime, null: false

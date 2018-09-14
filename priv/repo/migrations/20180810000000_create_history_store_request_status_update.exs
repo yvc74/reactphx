@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.CreateGW.History.Store.Request.Status.Update do
+8defmodule GW.Repo.Migrations.CreateGW.History.Store.Request.Status.Update do
     use Ecto.Migration
 
     def change do

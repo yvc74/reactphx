@@ -26,7 +26,7 @@ defmodule GW.Repo.Migrations.CreateGW.Request.Trailer.Service do
         add :picked_up_gaylord_count, :integer
         add :delivered_gaylord_count, :integer
         add :requested_in_new_goods, :integer, null: false
-        add :delivered_new_goods, :integer, null: false
+        add :delivered_new_goods, :integer
         add :requested_out_large_item_count, :integer, null: false
         add :comment_large_item_id, references(:comment, on_delete: :delete_all)
         add :picked_up_large_item_count, :integer
