@@ -1,12 +1,12 @@
-defmodule GW.Accounts do
+defmodule GW.User.Query do
   @moduledoc """
-  The boundary for the Accounts system.
+  The boundary for the User system.
   """
 
   import Ecto.Query, warn: false
   alias GW.Repo
 
-  alias GW.Accounts.User
+  alias GW.User
 
   @doc """
   Returns the list of users.

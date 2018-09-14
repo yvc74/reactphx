@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.CreateGW.Maintenance.Type do
+defmodule GW.Repo.Migrations.CreateGW.Trailer.Maintenance.Type do
     use Ecto.Migration
   
     def change do

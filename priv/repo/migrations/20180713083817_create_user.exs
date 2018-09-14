@@ -1,8 +1,8 @@
-defmodule GW.Repo.Migrations.CreateGW.Accounts.User do
+defmodule GW.Repo.Migrations.CreateGW.User do
   use Ecto.Migration
 
   def change do
-    create table(:accounts_user) do
+    create table(:user) do
       add :firstname, :string, size: 75, null: false
       add :lastname, :string, size: 75, null: false
       add :username, :string, size: 25, null: false

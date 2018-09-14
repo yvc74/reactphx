@@ -1,7 +1,7 @@
 defmodule GW.Web.RegistrationController  do
   use GW.Web, :controller
 
-  alias GW.{ Repo, Accounts.User }
+  alias GW.{ Repo, User }
 
   plug :scrub_params, "user" when action in [:create]
 
