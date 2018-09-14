@@ -9,7 +9,8 @@ defmodule GW.Repo.Migrations.CreateGW.Permission.Role do
   end
 end
 
-    #  create index(:permission_role, [:permission_id])
-    #  create index(:permission_role, [:role_id])
+      # create index(:permission_role, [:permission_id])
+      # create index(:permission_role, [:role_id])
 
 end
+git
