@@ -3,28 +3,27 @@ defmodule GW.User do
   import Ecto.Changeset
   alias GW.User
 
-  @derive {Poison.Encoder, only: [:id, :firstname, :last_name, :email]}
+  @derive {Poison.Encoder, only: [:id, :person_id ]}
 
   schema "user" do
-    field :email, :string
     field :encrypted_password, :string
-    field :firstname, :string
-    field :lastname, :string
+    
     field :password, :string, virtual: true
+    
+    belongs_to :person, GW.Person, foreign_key: :person_id
 
-    has_many :time_entries, GW.TimeBoundries.TimeEntry
-
-    timestamps()
+    timestamps(type: :utc_datetime)
   end
 
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:firstname, :lastname, :email, :password])
-    |> validate_required([:firstname, :email, :password])
-    |> validate_format(:email, ~r/@/)
-    |> validate_length(:password, min: 5)
-    |> unique_constraint(:email, message: "Email already taken")
+    |> cast(attrs, [:password, :person_id ])
+    |> validate_required([:password, :person_id])
+    |> validate_format(:password, ^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!#$&%*_+-=?|])[^*();'`"]{8,24}$)
+    |> foreign_key_constraint(:person_id)
+    |> unique_constraint(:person, message: "This person already has a user account.")
+
     |> generate_encrypted_password
   end
 
@@ -36,7 +35,7 @@ defmodule GW.User do
           :encrypted_password,
           Comeonin.Bcrypt.hashpwsalt(password)
         )
-      _ ->
+        _->
         current_changeset
     end
   end
