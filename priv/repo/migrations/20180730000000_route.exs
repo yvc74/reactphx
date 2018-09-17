@@ -4,10 +4,10 @@ defmodule GW.Repo.Migrations.Web.Models.Routes.Route do
       def change do
         create table(:route) do
           add :driver_id, references(:person, on_delete: :delete_all), null: false
-          add :planned_start_at, :datetime, null: false
-          add :planned_end_at, :datetime, null: false
-          add :actual_start_at, :datetime, null: false
-          add :actual_end_at, :datetime, null: false
+          add :planned_start_at, :utc_datetime, null: false
+          add :planned_end_at, :utc_datetime, null: false
+          add :actual_start_at, :utc_datetime, null: false
+          add :actual_end_at, :utc_datetime, null: false
           add :starting_trailer_id, references(:trailer, on_delete: :delete_all), null: false
           add :actual_starting_odometer, :"double precision"
           add :route_comment_id, references(:comment, on_delete: :delete_all)
@@ -22,4 +22,4 @@ defmodule GW.Repo.Migrations.Web.Models.Routes.Route do
 
     end
 
-  end
+end

@@ -1,7 +1,7 @@
 defmodule GW.GuardianSerializer do
   @behaviour Guardian.Serializer
 
-  alias GW.{Repo, User}
+  alias GW.{Repo, Accounts.User}
 
   def for_token(user = %User{}), do: { :ok, "User:#{user.id}" }
   def for_token(_), do: { :error, "Unknown resource type" }
