@@ -8,8 +8,8 @@ defmodule GW.Repo.Migrations.Web.Models.Requests.RequestTrailerService do
         add :user_id, references(:user, on_delete: :delete_all), null: false
         add :requested_delivery_on, :date, null: false
         add :requested_time_of_day_id, references(:time_of_day, on_delete: :delete_all)
-        add :requested_delivery_from, :datetime
-        add :requested_delivery_to, :datetime
+        add :requested_delivery_from, :utc_datetime
+        add :requested_delivery_to, :utc_datetime
         add :request_comment_id, references(:comment, on_delete: :delete_all)
         add :trailer_condition_comment_id, references(:comment, on_delete: :delete_all)
         add :request_out_pallet_count, :integer, null: false

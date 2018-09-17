@@ -3,7 +3,7 @@ defmodule GW.Repo.Migrations.Web.Models.Requests.RequestTrailerMaintenance do
 
     def change do
         create table(:request_trailer_maintenance, primary_key: false) do
-          add :request_id, references(:request, on_delete: :delete_all), null: false
+          add :request_id, references(:request, on_delete: :delete_all), primary_key: true, null: false
           add :maintenance_type_id, references(:request_trailer_maintenance_type, on_delete: :delete_all), null: false
           add :location_id, references(:location, on_delete: :delete_all), null: false
           add :user_id, references(:user, on_delete: :delete_all), null: false
