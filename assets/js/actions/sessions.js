@@ -31,11 +31,11 @@ export function setCurrentUser(dispatch, user) {
 };
 
 const Actions = {
-  signIn: (email, password) => {
+  signIn: (username, password) => {
     return dispatch => {
       const data = {
         session: {
-          email: email,
+          username: username,
           password: password,
         },
       };

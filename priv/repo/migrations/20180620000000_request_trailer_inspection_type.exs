@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Requests.RequestTrailerInspectionType do
+defmodule GW.Repo.Migrations.Requests.RequestTrailerInspectionType do
     use Ecto.Migration
   
     def change do

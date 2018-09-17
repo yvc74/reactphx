@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Comments.CommentType do
+defmodule GW.Repo.Migrations.Comments.CommentType do
     use Ecto.Migration
   
     def change do

@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Requests.RequestUnintendedDonation do
+defmodule GW.Repo.Migrations.Requests.RequestUnintendedDonation do
     use Ecto.Migration
 
     def change do

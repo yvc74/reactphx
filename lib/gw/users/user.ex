@@ -1,15 +1,13 @@
-defmodule GW.User do
+defmodule GW.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias GW.User
+  alias GW.Users.User
 
-  @derive {Poison.Encoder, only: [:id, :firstname, :last_name, :email]}
+  @derive {Poison.Encoder, only: [:id, :username]}
 
   schema "user" do
-    field :email, :string
+    field :username, :string
     field :encrypted_password, :string
-    field :firstname, :string
-    field :lastname, :string
     field :password, :string, virtual: true
 
     has_many :time_entries, GW.TimeBoundries.TimeEntry
@@ -20,11 +18,9 @@ defmodule GW.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:firstname, :lastname, :email, :password])
-    |> validate_required([:firstname, :email, :password])
-    |> validate_format(:email, ~r/@/)
+    |> cast(attrs, [:username, :password])
+    |> validate_required([:password])
     |> validate_length(:password, min: 5)
-    |> unique_constraint(:email, message: "Email already taken")
     |> generate_encrypted_password
   end
 

@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.TimeBoundries.TimeEntry do
+defmodule GW.Repo.Migrations.TimeBoundries.TimeEntry do
   use Ecto.Migration
 
     def change do

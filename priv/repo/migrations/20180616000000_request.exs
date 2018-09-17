@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Requests.Request do
+defmodule GW.Repo.Migrations.Requests.Request do
     use Ecto.Migration
 
     def change do

@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.History.HistoryAdcTrailerStatus do
+defmodule GW.Repo.Migrations.Histories.HistoryAdcTrailerStatus do
     use Ecto.Migration
 
     def change do

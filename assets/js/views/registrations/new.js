@@ -1,4 +1,4 @@
-import React, {PropTypes}   from 'react';
+import React from 'react';
 import { connect }          from 'react-redux';
 import { Link }             from 'react-router-dom';
 
@@ -19,8 +19,7 @@ class RegistrationsNewView extends React.Component {
     const { dispatch } = this.props;
 
     const data = {
-      firstname: this.refs.firstname.value,
-      email: this.refs.email.value,
+      username: this.refs.username.value,
       password: this.refs.password.value,
     };
 
@@ -40,12 +39,8 @@ class RegistrationsNewView extends React.Component {
             </header>
             <form id="sign_up_form" onSubmit={this._handleSubmit}>
               <div className="field">
-                <input ref="firstname" id="user_first_name" type="text" placeholder="First name" required={true} />
-                {renderErrorsFor(errors, 'firstname')}
-              </div>
-              <div className="field">
-                <input ref="email" id="user_email" type="email" placeholder="Email" required={true} />
-                {renderErrorsFor(errors, 'email')}
+                <input ref="username" id="user_username" type="text" placeholder="Username" required={true} />
+                {renderErrorsFor(errors, 'username')}
               </div>
               <div className="field">
                 <input ref="password" id="user_password" type="password" placeholder="Password" required={true} />

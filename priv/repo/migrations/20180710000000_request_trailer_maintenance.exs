@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Requests.RequestTrailerMaintenance do
+defmodule GW.Repo.Migrations.Requests.RequestTrailerMaintenance do
     use Ecto.Migration
 
     def change do

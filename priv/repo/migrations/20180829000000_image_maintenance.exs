@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Images.ImageMaintenance do
+defmodule GW.Repo.Migrations.Images.ImageMaintenance do
     use Ecto.Migration
   
     def change do

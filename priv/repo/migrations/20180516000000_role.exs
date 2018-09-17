@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.User.Role do
+defmodule GW.Repo.Migrations.Users.Role do
     use Ecto.Migration
   
     def change do

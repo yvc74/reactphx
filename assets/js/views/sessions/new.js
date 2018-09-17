@@ -8,17 +8,17 @@ import {
 import Actions              from '../../actions/sessions';
 
 class SessionsNewView extends React.Component {
-  componentDidMount() {
+  componentDidMount(props) {
     setDocumentTitle('Sign in');
   }
 
   _handleSubmit(e) {
     e.preventDefault();
 
-    const { email, password } = this.refs;
+    const { username, password } = this.refs;
     const { dispatch } = this.props;
 
-    dispatch(Actions.signIn(email.value, password.value));
+    dispatch(Actions.signIn(username.value, password.value));
   }
 
   _renderError() {
@@ -46,10 +46,10 @@ class SessionsNewView extends React.Component {
               {this._renderError()}
               <div className="field">
                 <input
-                  ref="email"
-                  type="Email"
-                  id="user_email"
-                  placeholder="Email"
+                  ref="username"
+                  type="text"
+                  id="user_username"
+                  placeholder="Username"
                   required="true"/>
               </div>
               <div className="field">

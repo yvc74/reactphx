@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Trailers.TrailerLeaseAgreement do
+defmodule GW.Repo.Migrations.Trailers.TrailerLeaseAgreement do
     use Ecto.Migration
 
     def change do

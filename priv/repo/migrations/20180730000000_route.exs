@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Routes.Route do
+defmodule GW.Repo.Migrations.Routes.Route do
     use Ecto.Migration
 
       def change do

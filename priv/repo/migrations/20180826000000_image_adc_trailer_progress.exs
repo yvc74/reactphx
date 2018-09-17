@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Images.ImageAdcTrailerProgress do
+defmodule GW.Repo.Migrations.Images.ImageAdcTrailerProgress do
     use Ecto.Migration
   
     def change do

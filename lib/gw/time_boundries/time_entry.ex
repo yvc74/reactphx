@@ -2,7 +2,7 @@ defmodule GW.TimeBoundries.TimeEntry do
   use Ecto.Schema
   use Timex
   import Ecto.{ Query, Changeset }
-  alias GW.{ TimeBoundries.TimeEntry, User }
+  alias GW.{ TimeBoundries.TimeEntry, Users.User }
 
   @derive {Poison.Encoder, only: [
     :id, :description, :started_at, :stopped_at, :restarted_at, :duration,

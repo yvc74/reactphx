@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Trailers.TrailerLeaseConditionType do
+defmodule GW.Repo.Migrations.Trailers.TrailerLeaseConditionType do
     use Ecto.Migration
   
     def change do

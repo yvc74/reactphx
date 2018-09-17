@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Location.Location do
+defmodule GW.Repo.Migrations.Locations.Location do
     use Ecto.Migration
 
     def change do

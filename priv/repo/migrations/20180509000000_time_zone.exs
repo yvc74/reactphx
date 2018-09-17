@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Time.TimeZone do
+defmodule GW.Repo.Migrations.Times.TimeZone do
     use Ecto.Migration
   
     def change do

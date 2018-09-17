@@ -1,7 +1,7 @@
 defmodule GW.Web.SessionController do
   use GW.Web, :controller
 
-  alias GW.{ Repo, User }
+  alias GW.{ Repo, Users.User }
 
   plug :scrub_params, "session" when action in [:create]
 
@@ -38,8 +38,8 @@ defmodule GW.Web.SessionController do
     |> render(GW.Web.SessionView, "forbidden.json", error: "Not Authenticated")
   end
 
-  defp authenticate(%{"email" => email, "password" => password}) do
-    user = Repo.get_by(User, email: String.downcase(email))
+  defp authenticate(%{"username" => username, "password" => password}) do
+    user = Repo.get_by(User, username: String.downcase(username))
 
     case check_password(user, password) do
       true -> {:ok, user}

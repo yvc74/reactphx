@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Trailers.TrailerTireSize do
+defmodule GW.Repo.Migrations.Trailers.TrailerTireSize do
     use Ecto.Migration
   
     def change do

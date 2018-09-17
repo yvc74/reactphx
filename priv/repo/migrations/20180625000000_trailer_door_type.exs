@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Trailers.TrailerDoorType do
+defmodule GW.Repo.Migrations.Trailers.TrailerDoorType do
     use Ecto.Migration
   
     def change do

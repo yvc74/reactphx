@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Time.TimeOfDay do
+defmodule GW.Repo.Migrations.Times.TimeOfDay do
     use Ecto.Migration
   
     def change do

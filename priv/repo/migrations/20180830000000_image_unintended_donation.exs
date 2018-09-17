@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.Web.Models.Images.ImageUnintendedDonation do
+defmodule GW.Repo.Migrations.Images.ImageUnintendedDonation do
     use Ecto.Migration
   
     def change do

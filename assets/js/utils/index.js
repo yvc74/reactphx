@@ -60,7 +60,7 @@ export function httpDelete(url) {
 }
 
 export function setDocumentTitle(title) {
-  document.title = `${title} • Phoenix GW`;
+  document.title = `${title} • GW`;
 }
 
 export function renderErrorsFor(errors, ref) {

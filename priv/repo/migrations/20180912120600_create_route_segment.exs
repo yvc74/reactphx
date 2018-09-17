@@ -1,4 +1,4 @@
-defmodule GW.Repo.Migrations.CreateGW.Route.Segment do
+defmodule GW.Repo.Migrations.Routes.RouteSegment do
     use Ecto.Migration
   
       def change do
