@@ -19,8 +19,8 @@ defmodule GW.Models.Comments.CommentType do
 
   def edit(comment_type, params \\ %{}) do
     comment_type_name
-    |> cast(params, [:comment_text, :id])
-    |> validate_required([:comment_text, :id])
+    |> cast(params, [:comment_type_name, :id])
+    |> validate_required([:comment_type_name, :id])
   end
 
   def delete(comment_type, params \\ %{}) do

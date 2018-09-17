@@ -8,7 +8,7 @@ defmodule GW.Models.Images.Image do
     Images.ImageMaintenance,
     Images.LargePickup,
     Trailers.TrailerInvoiceDetail,
-    Images.ImageLease
+    Images.ImageLease,
     Images.ImageAdcTrailerProgress
     }
 
@@ -19,9 +19,8 @@ defmodule GW.Models.Images.Image do
     belongs_to :user, User
 
     has_many :image_user, ImageUser, [foreign_key: :image_guid]
-    has_many :image_unintended_donation, ImageUnintendedDonation, [foreign_key: :image_guid]
-    has_many :image_maintenance, ImageMaintenance, [foreign_key: :image_guid]
-    has_many :image_large_pickup, ImageLargePickup, [foreign_key: :image_guid]
+    has_one :image_unintended_donation, ImageUnintendedDonation, [foreign_key: :image_guid]
+    has_one :image_maintenance, ImageMaintenance, [foreign_key: :image_guid]
     has_many :image_large_pickup, ImageLargePickup, [foreign_key: :image_guid]
     has_many :image_lease, ImageLease, [foreign_key: :image_guid]
     has_many :image_adc_trailer_progress, ImageAdcTrailerProgress [foreign_key: :image_guid]

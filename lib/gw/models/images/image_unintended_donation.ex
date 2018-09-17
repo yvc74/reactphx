@@ -2,7 +2,7 @@ defmodule GW.Models.Images.ImageUnintendedDonation do
   use Ecto.Schema
   import Ecto.Changeset
   alias GW.Models.{
-    Images.Image
+    Images.Image,
     Requests.Request
   }
 
